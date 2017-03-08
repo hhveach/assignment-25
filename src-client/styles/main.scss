@@ -1,4 +1,82 @@
 * {box-sizing: border-box;}
 
+body {margin: 0;}
 
-// #50e3c2;
+input:focus, button:focus {outline: none;}
+
+.main-btn {
+  background-color: #50e3c2;
+  color: white;
+  border: 1px solid #50e3c2;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#app-container {
+  font-family: 'Helvetica Neue', sans-serif;
+  padding-top: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  width: 100%;
+  border: 1px solid #50e3c2;
+  padding-left: 20px;
+}
+
+.nav h1 {
+  width: 88%;
+  color: #50e3c2;
+  display: inline-block;
+  vertical-align: top;
+  border-bottom: 1px solid black;
+}
+
+.nav-img {
+  width: 10%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.nav span {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.blue {color: #50e3c2;}
+
+.login-view, .register-main {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 12px;
+  // border: 1px solid black;
+  // border-radius: 5px;
+  padding: 8px;
+}
+
+.register label {
+  display: block;
+  margin: 5px 0;
+}
+
+.register input {
+  margin-right: 5px;
+}
+
+.login label, input {
+  margin-right: 5px;
+}
+
+.chirp-data {
+  display: block;
+  width: 75%;
+  margin: 5px auto;
+  background-color: #50e3c2;
+  padding: 10px;
+  border: 1px solid black;
+  color: white;
+  border-radius: 4px;
+}
