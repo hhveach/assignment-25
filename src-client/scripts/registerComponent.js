@@ -1,31 +1,33 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
+import {STORE} from './store.js';
+import {ACTIONS} from './actions.js';
 
 
 export const RegisterView = React.createClass({
-  // getInitialState: function(){
-  //
-  // },
 
   _handleSubmit: function(evt){
     evt.preventDefault();
+    let current = evt.target;
+    let newUserInput = {
+      username: current.regUsername.value,
+      personalName: current.newName.value,
+      avatarUrl: current.regImg.value,
+      password: current.regPassword.value,
+    }
 
-  },
-
-  _handleReset: function(evt){
-    evt.preventDefault();
-
+    ACTIONS.userRegister(newUserInput);
+    ACTIONS.changeNav('HOME', '');
   },
 
   render: function(){
     return (
       <div className="register-main">
         <h3 className="blue">Sign-Up for Chirp!</h3>
-        <form className="register-form">
+        <form className="register-form" onSubmit={this._handleSubmit}>
           <div className="register">
             <label>Your Name</label>
-            <input type="text" placeholder="First" name="lastName"/>
-            <input type="text" placeholder="Last" name="firstName"/>
+            <input type="text" placeholder="Name" name="newName"/>
           </div>
 
           <div className="register">
@@ -35,8 +37,7 @@ export const RegisterView = React.createClass({
 
           <div className="register">
             <label>Password</label>
-            <input type="text" placeholder="Password" name="regPasswordFirst"/>
-            <input type="text" placeholder="Confirm Password" name="regPasswordLast"/>
+            <input type="password" placeholder="Password" name="regPassword"/>
           </div>
 
           <div className="register">
@@ -44,12 +45,9 @@ export const RegisterView = React.createClass({
             <input type="text" placeholder="Image" name="regImg"/>
           </div>
 
-          <button type="submit" onSubmit={this._handleSubmit} className="main-btn">Register</button>
-          <button onClick={this._handleReset} className="main-btn">Reset Form</button>
-
+          <button type="submit" className="main-btn">Register</button>
         </form>
-      </div>
+       </div>
     )
-
   }
 });

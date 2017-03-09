@@ -12,11 +12,12 @@ input:focus, button:focus {outline: none;}
   margin: 5px;
 }
 
-#app-container {
+.container {
   font-family: 'Helvetica Neue', sans-serif;
   padding-top: 30px;
   width: 1200px;
   margin: 0 auto;
+  // background-color: #79eed4;
 }
 
 .nav {
@@ -31,16 +32,32 @@ input:focus, button:focus {outline: none;}
   display: inline-block;
   vertical-align: top;
   border-bottom: 1px solid black;
+  margin-bottom: 3px;
 }
 
+.nav-bar {
+  width: 88%;
+  vertical-align: top;
+  margin: -25px 0 10px 0;
+}
+
+.nav-btn {
+  margin: 5px;
+  padding: 5px;
+  background-color: #50e3c2;
+  font-weight: 300;
+}
+
+.nav-btn:hover {cursor: pointer;}
+
 .nav-img {
-  width: 10%;
+  width: 12%;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
 }
 
-.nav span {
+.chirp-span {
   font-weight: 300;
   font-style: italic;
 }
@@ -48,10 +65,10 @@ input:focus, button:focus {outline: none;}
 .blue {color: #50e3c2;}
 
 .login-view, .register-main {
-  width: 48%;
-  display: inline-block;
+  width: 90%;
+  display: block;
   vertical-align: top;
-  margin: 5px 12px;
+  margin: 10px auto;
   // border: 1px solid black;
   // border-radius: 5px;
   padding: 8px;
@@ -76,7 +93,18 @@ input:focus, button:focus {outline: none;}
   margin: 5px auto;
   background-color: #50e3c2;
   padding: 10px;
-  border: 1px solid black;
+  // border: 1px solid black;
   color: white;
   border-radius: 4px;
+}
+
+.chirp-data img {
+  display: inline-block;
+  width: 12%;
+  vertical-align: top;
+}
+
+.chirp-data h3, p {
+  display: inline-block;
+  width: 85%;
 }

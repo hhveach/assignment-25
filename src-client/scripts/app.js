@@ -2,39 +2,40 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import Backbone from 'backbone';
 import $ from 'jquery';
-import {HomeView} from './homeComponent.js';
-import {ChirpView} from './chirpsComponent.js';
-import {LoginView} from './loginComponent.js';
-import {RegisterView} from './registerComponent.js';
-import {NavView} from './navComponent.js';
+import {SingleChirp, AllChirps} from './models/chirpModels.js';
+// import {HomeView} from './homeComponent.js';
+// import {ChirpView} from './chirpsComponent.js';
+// import {LoginView} from './loginComponent.js';
+// import {RegisterView} from './registerComponent.js';
+// import {NavView} from './navComponent.js';
+import {ViewController} from './ViewController.js';
 
 const AppRouter = Backbone.Router.extend({
 	initialize: function(){
 		Backbone.history.start();
-		console.log('wired');
 	},
 
 	routes: {
 		'chirps' : 'chirpPage',
 		'login' : 'loginPage',
-		'register' : 'registerPage',
+		'signup' : 'signupPage',
 		'' : 'homePage'
 	},
 
 	chirpPage: function(){
-		ReactDOM.render(<ChirpView/>, document.querySelector('#app-container'));
+		ReactDOM.render(<ViewController route={'CHIRPS'}/>, document.querySelector('#app-container'));
 	},
 
 	loginPage: function(){
-
+		ReactDOM.render(<ViewController route={'LOGIN'}/>, document.querySelector('#app-container'));
 	},
 
-	registerPage: function(){
-
+	signupPage: function(){
+		ReactDOM.render(<ViewController route={'SIGNUP'}/>, document.querySelector('#app-container'));
 	},
 
 	homePage: function(){
-		ReactDOM.render(<HomeView/>, document.querySelector('#app-container'));
+		ReactDOM.render(<ViewController route={'HOME'}/>, document.querySelector('#app-container'));
 	},
 
 });
