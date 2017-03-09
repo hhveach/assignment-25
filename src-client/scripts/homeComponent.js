@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import {NavView} from './navComponent.js';
 
-
 export const HomeView = React.createClass({
 
   render: function(){

@@ -17,7 +17,6 @@ export const RegisterView = React.createClass({
     }
 
     ACTIONS.userRegister(newUserInput);
-    ACTIONS.changeNav('HOME', '');
   },
 
   render: function(){
@@ -47,7 +46,7 @@ export const RegisterView = React.createClass({
 
           <button type="submit" className="main-btn">Register</button>
         </form>
-       </div>
+      </div>
     )
   }
 });

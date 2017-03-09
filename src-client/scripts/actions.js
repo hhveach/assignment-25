@@ -29,7 +29,7 @@ export const ACTIONS = {
   userLogin: function(username, password){
     UserModel.logIn(username, password).then(function(serverRes){
      STORE.setStore('currentUser', serverRes)
-     ACTIONS.changeNav('CHIRPS', 'chirps');
+     ACTIONS.changeNav('HOME', '');
       });
   },
 

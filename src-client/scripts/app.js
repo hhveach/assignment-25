@@ -3,11 +3,6 @@ import React from 'react';
 import Backbone from 'backbone';
 import $ from 'jquery';
 import {SingleChirp, AllChirps} from './models/chirpModels.js';
-// import {HomeView} from './homeComponent.js';
-// import {ChirpView} from './chirpsComponent.js';
-// import {LoginView} from './loginComponent.js';
-// import {RegisterView} from './registerComponent.js';
-// import {NavView} from './navComponent.js';
 import {ViewController} from './ViewController.js';
 
 const AppRouter = Backbone.Router.extend({
@@ -19,6 +14,7 @@ const AppRouter = Backbone.Router.extend({
 		'chirps' : 'chirpPage',
 		'login' : 'loginPage',
 		'signup' : 'signupPage',
+		'logout' : 'logoutPage',
 		'' : 'homePage'
 	},
 
@@ -28,6 +24,10 @@ const AppRouter = Backbone.Router.extend({
 
 	loginPage: function(){
 		ReactDOM.render(<ViewController route={'LOGIN'}/>, document.querySelector('#app-container'));
+	},
+
+	logoutPage: function(){
+		ReactDOM.render(<ViewController route={'LOGOUT'}/>, document.querySelector('#app-container'));
 	},
 
 	signupPage: function(){

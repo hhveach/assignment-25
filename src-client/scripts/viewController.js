@@ -4,6 +4,7 @@ import {ChirpView} from './chirpsComponent.js';
 import {LoginView} from './loginComponent.js';
 import {RegisterView} from './registerComponent.js';
 import {NavView} from './navComponent.js';
+import {LogOutView} from './LogOutView.js';
 import {STORE} from './store.js';
 import {ACTIONS} from './actions.js';
 
@@ -31,6 +32,9 @@ export const ViewController = React.createClass({
       case 'LOGIN':
         renderComp = <LoginView {...this.state}/>;
         break;
+      case 'LOGOUT':
+        renderComp = <LogOutView {...this.state}/>;
+        break;
       case 'SIGNUP':
         renderComp = <RegisterView {...this.state}/>;
         break;
@@ -42,7 +46,7 @@ export const ViewController = React.createClass({
     }
     return (
       <div className="container">
-        <NavView/>
+        <NavView {...this.state}/>
         {renderComp}
       </div>
     )

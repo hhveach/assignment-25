@@ -12,7 +12,6 @@ export const LoginView = React.createClass({
     let user = current.usr.value;
     let pass = current.pwd.value;
     ACTIONS.userLogin(user, pass);
-    ACTIONS.changeNav('CHIRPS', 'chirps');
   },
 
   render: function(){

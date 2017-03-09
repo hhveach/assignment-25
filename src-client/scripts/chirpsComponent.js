@@ -1,8 +1,19 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
+import {NewChirpForm} from './newChirpComponent.js';
+import {STORE} from './store.js';
+import {ACTIONS} from './actions.js';
 
 
 export const ChirpView = React.createClass({
+
+  getInitialState: function(){
+    return STORE.getStoreData();
+  },
+
+  componentDidMount: function(){
+    ACTIONS.getAllChirps();
+  },
 
   _chirpsJSX: function(){
     let all = ACTIONS.getAllChirps();
@@ -19,8 +30,11 @@ export const ChirpView = React.createClass({
   },
 
   render: function(){
+    let enterChirp = <div className="maybe"></div>;
+    if(typeof this.props.currentUser._id !== 'undefined'){enterChirp = <NewChirpForm/>}
     return (
       <div className="chirp">
+        {enterChirp}
         {this._chirpsJSX}
       </div>
     )
