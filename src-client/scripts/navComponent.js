@@ -6,6 +6,10 @@ import {ACTIONS} from './actions.js';
 
 export const NavView = React.createClass({
 
+  getInitialState: function(){
+    return STORE.getStoreData();
+  },
+
   _dynamicNav: function(isUser){
     let logged;
       if (typeof isUser._id === 'undefined'){
@@ -21,7 +25,6 @@ export const NavView = React.createClass({
         logged = [
           {routeName: 'HOME', text: 'HOME', urlHash: ''},
           {routeName: 'LOGOUT', text: 'LOGOUT', urlHash: 'logout'},
-          // {routeName: 'NEWCHIRP', text: '+CHIRP', urlHash: 'newChirp'},
           {routeName: 'CHIRPS', text: 'CHIRPS', urlHash: 'chirps'}
         ]
       }
@@ -60,12 +63,9 @@ const TheNavRoutes = React.createClass({
 
   render: function(){
     return (
-      <span className="nav-btn" data-route={this.props.routeName}
-            onClick={this._handleNavClick}>{this.props.text}</span>
-      // {/* <span className="nav-btn" onClick={this._handleNavClick} data-route="HOME">HOME</span>
-      // <span className="nav-btn" onClick={this._handleNavClick} data-route="LOGIN">LOGIN</span>
-      // <span className="nav-btn" onClick={this._handleNavClick} data-route="SIGNUP">SIGNUP</span>
-      // <span className="nav-btn" onClick={this._handleNavClick} data-route="CHIRPS">CHIRPS</span> */}
+            <span className="nav-btn" data-route={this.props.routeName}
+                  onClick={this._handleNavClick}>{this.props.text}
+            </span>
     )
   },
 });

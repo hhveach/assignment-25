@@ -12,12 +12,20 @@ input:focus, button:focus {outline: none;}
   margin: 5px;
 }
 
+.logout-btn {
+  background-color: #50e3c2;
+  color: white;
+  border: 1px solid #50e3c2;
+  border-radius: 10px;
+  width: 40%;
+  margin-top: 15px;
+}
+
 .container {
   font-family: 'Helvetica Neue', sans-serif;
   padding-top: 30px;
   width: 1200px;
   margin: 0 auto;
-  // background-color: #79eed4;
 }
 
 .nav {
@@ -57,6 +65,33 @@ input:focus, button:focus {outline: none;}
   padding: 10px;
 }
 
+.home {
+  width: 60%;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.home h2 {
+  font-size: 40px;
+  font-weight: 300;
+  color: black;
+  color: #50e3c2;
+}
+
+.register-main h3, .login-view h3 {
+  font-size: 40px;
+  font-weight: 300;
+  color: black;
+  color: #50e3c2;
+}
+
+.home p {
+  text-align: left;
+  line-height: 2;
+  font-size: 20px;
+}
+
 .chirp-span {
   font-weight: 300;
   font-style: italic;
@@ -65,26 +100,40 @@ input:focus, button:focus {outline: none;}
 .blue {color: #50e3c2;}
 
 .login-view, .register-main {
-  width: 90%;
+  width: 60%;
   display: block;
   vertical-align: top;
   margin: 10px auto;
-  // border: 1px solid black;
-  // border-radius: 5px;
   padding: 8px;
+  text-align: center;
 }
 
 .register label {
   display: block;
   margin: 5px 0;
+  font-size: 20px;
 }
 
 .register input {
   margin-right: 5px;
+  width: 45%;
 }
 
 .login label, input {
   margin-right: 5px;
+}
+
+.logout-view {
+  width: 60%;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.logout-view h3 {
+  color: black;
+  font-weight: 200;
+  font-size: 36px;
 }
 
 .chirp-data {
@@ -93,7 +142,6 @@ input:focus, button:focus {outline: none;}
   margin: 5px auto;
   background-color: #50e3c2;
   padding: 10px;
-  // border: 1px solid black;
   color: white;
   border-radius: 4px;
 }

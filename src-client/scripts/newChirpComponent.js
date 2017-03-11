@@ -10,16 +10,15 @@ export const NewChirpForm = React.createClass({
   _handleSubmit: function(evt){
     evt.preventDefault();
     let current = evt.target;
-    if(current.chirpMsg.length > 170){
+    if(current.chirpMsg.value.length > 170){
       throw new Error('Chirps are limited to 170 characters!');
     }
     let newChirpInput = {
       msg: current.chirpMsg.value,
       imgLink: current.chirpImg.value,
     }
-
-    ACTIONS.saveChirp(newChripInput);
-    ACTIONS.changeNav('CHIRPS', 'chirps');
+    ACTIONS.saveChirp(newChirpInput);
+    // ACTIONS.getAllChirps();
   },
 
   render: function(){
@@ -38,7 +37,7 @@ export const NewChirpForm = React.createClass({
               <input type="text" placeholder="Image" name="chirpImg"/>
             </div>
 
-            <button type="submit" className="main-btn">Register</button>
+            <button type="submit" className="main-btn">Chirp! It</button>
           </form>
         </div>
     )

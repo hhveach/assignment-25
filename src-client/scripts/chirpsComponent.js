@@ -10,33 +10,42 @@ export const ChirpView = React.createClass({
   getInitialState: function(){
     return STORE.getStoreData();
   },
+  //
+  // componentWillMount: function(){
+  //   ACTIONS.getAllChirps();
+  // },
 
   componentDidMount: function(){
     ACTIONS.getAllChirps();
   },
 
-  _chirpsJSX: function(){
-    let all = ACTIONS.getAllChirps();
-    let final = all.map(function(listEl){
-      return (
-        <div className="chirp-data">
-          {/* <h3>Chirp! Title</h3><p>Author Name<span>Date Posted</span></p> */}
-          <img src={listEl.imgLink}/>
-          <p>{listEl.msg}</p>
-        </div>
-      )
-    });
+  // componentDidUpdate: function(){
+  //   ACTIONS.getAllChirps();
+  // },
+
+  _chirpsJSX: function(chirps){
+    let final = chirps.map(function(listEl, i){
+
+    return (
+            <div className="chirp-data" key={i}>
+              <img src={listEl.imgLink}/>
+              <p>{listEl.msg}</p>
+            </div>
+          )
+    }).reverse()
     return final;
   },
 
   render: function(){
     let enterChirp = <div className="maybe"></div>;
+    let all = this.props.chirpsList;
+
     if(typeof this.props.currentUser._id !== 'undefined'){enterChirp = <NewChirpForm/>}
-    return (
-      <div className="chirp">
-        {enterChirp}
-        {this._chirpsJSX}
-      </div>
-    )
+
+    return (   <div className="chirp">
+                {enterChirp}
+                {this._chirpsJSX(all)}
+               </div>
+           )
   }
 });

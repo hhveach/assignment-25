@@ -13,7 +13,6 @@ export const STORE = {
     this._data[dataProp] = dataPropVal;
 
 		if(typeof _callbackFunction === 'function'){this._callbackFunction();};
-
   },
 
   onStoreChange: function(callback){

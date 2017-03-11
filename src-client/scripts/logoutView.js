@@ -14,10 +14,10 @@ export const LogOutView = React.createClass({
 
   render: function(){
     return (
-      <div className="login-view">
-        <h3 className="blue">Logout?</h3>
+      <div className="logout-view">
+          <h3>Are You Sure You Want To Logout?</h3>
         <form className="login" onSubmit={this._handleLogout}>
-          <button type="submit" className="main-btn">LOGOUT</button>
+          <button type="submit" className="logout-btn">LOGOUT</button>
         </form>
       </div>
     )
