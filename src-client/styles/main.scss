@@ -119,9 +119,7 @@ input:focus, button:focus {outline: none;}
   width: 45%;
 }
 
-.login label, input {
-  margin-right: 5px;
-}
+.login label, input {margin-right: 5px;}
 
 .logout-view {
   width: 60%;
@@ -136,10 +134,31 @@ input:focus, button:focus {outline: none;}
   font-size: 36px;
 }
 
+.enter-chirp {
+  display: inline-block;
+  width: 28%;
+  vertical-align: top;
+}
+
+.new-chirp > * {display: block;}
+
+.new-chirp {margin: 5px 0;}
+
+.chirp {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.big-chirp {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+}
+
 .chirp-data {
   display: block;
-  width: 75%;
-  margin: 5px auto;
+  width: 90%;
+  margin: 5px;
   background-color: #50e3c2;
   padding: 10px;
   color: white;
@@ -150,6 +169,7 @@ input:focus, button:focus {outline: none;}
   display: inline-block;
   width: 12%;
   vertical-align: top;
+  margin-right: 10px;
 }
 
 .chirp-data h3, p {

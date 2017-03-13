@@ -10,10 +10,10 @@ export const ChirpView = React.createClass({
   getInitialState: function(){
     return STORE.getStoreData();
   },
-  //
-  // componentWillMount: function(){
-  //   ACTIONS.getAllChirps();
-  // },
+
+  componentWillMount: function(){
+    ACTIONS.getAllChirps();
+  },
 
   componentDidMount: function(){
     ACTIONS.getAllChirps();
@@ -44,7 +44,9 @@ export const ChirpView = React.createClass({
 
     return (   <div className="chirp">
                 {enterChirp}
+                <div className="big-chirp">
                 {this._chirpsJSX(all)}
+                </div>
                </div>
            )
   }
