@@ -6,10 +6,6 @@ import {ACTIONS} from './actions.js';
 
 export const NavView = React.createClass({
 
-  getInitialState: function(){
-    return STORE.getStoreData();
-  },
-
   _dynamicNav: function(isUser){
     let logged;
       if (typeof isUser._id === 'undefined'){

@@ -26,7 +26,7 @@ export const RegisterView = React.createClass({
         <form className="register-form" onSubmit={this._handleSubmit}>
           <div className="register">
             <label>Your Name</label>
-            <input type="text" placeholder="Name" name="newName"/>
+            <input type="text" placeholder="Full Name" name="newName"/>
           </div>
 
           <div className="register">

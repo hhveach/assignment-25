@@ -18,7 +18,6 @@ export const NewChirpForm = React.createClass({
       imgLink: current.chirpImg.value,
     }
     ACTIONS.saveChirp(newChirpInput);
-    STORE.getStoreData();
 
   },
 

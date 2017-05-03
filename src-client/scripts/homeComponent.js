@@ -5,10 +5,6 @@ import {STORE} from './store.js';
 
 export const HomeView = React.createClass({
 
-  // getInitialState: function(){
-  //   return STORE.getStoreData();
-  // },
-
   render: function(){
     return (
       <div className="home">

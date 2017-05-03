@@ -9,17 +9,19 @@ import {STORE} from './store.js';
 import {ACTIONS} from './actions.js';
 
 export const ViewController = React.createClass({
+
   getInitialState: function(){
     ACTIONS.changeNav(this.props.route, window.location.hash)
-    let storeObject = STORE.getStoreData();
-    return storeObject;
+    // let storeObject = STORE.getStoreData();
+    // return storeObject;
+    return STORE.getStoreData();
   },
 
   componentDidMount: function(){
 		let comp = this;
 		STORE.onStoreChange(function(){
 			let newStoreObj = STORE.getStoreData();
-			comp.setState(newStoreObj)
+			comp.setState(newStoreObj);
 		})
 	},
 

@@ -7,22 +7,6 @@ import {ACTIONS} from './actions.js';
 
 export const ChirpView = React.createClass({
 
-  getInitialState: function(){
-    return STORE.getStoreData();
-  },
-
-  componentWillMount: function(){
-    ACTIONS.getAllChirps();
-  },
-
-  componentDidMount: function(){
-    ACTIONS.getAllChirps();
-  },
-
-  // componentDidUpdate: function(){
-  //   ACTIONS.getAllChirps();
-  // },
-
   _chirpsJSX: function(chirps){
     let final = chirps.map(function(listEl, i){
 
@@ -38,15 +22,15 @@ export const ChirpView = React.createClass({
 
   render: function(){
     let enterChirp = <div className="maybe"></div>;
-    let all = this.props.chirpsList;
+    // let all = this.props.chirpsList;
 
     if(typeof this.props.currentUser._id !== 'undefined'){enterChirp = <NewChirpForm/>}
 
     return (   <div className="chirp">
-                {enterChirp}
                 <div className="big-chirp">
-                {this._chirpsJSX(all)}
+                {this._chirpsJSX(this.props.chirpsList)}
                 </div>
+                {enterChirp}
                </div>
            )
   }
