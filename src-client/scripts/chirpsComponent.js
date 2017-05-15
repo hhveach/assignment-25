@@ -7,6 +7,10 @@ import {ACTIONS} from './actions.js';
 
 export const ChirpView = React.createClass({
 
+  componentWillReceiveProps(){
+    console.log(this.props.chirpsList);
+  },
+
   _chirpsJSX: function(chirps){
     let final = chirps.map(function(listEl, i){
 
@@ -21,6 +25,7 @@ export const ChirpView = React.createClass({
   },
 
   render: function(){
+    console.log(this.props.chirpsList);
     let enterChirp = <div className="maybe"></div>;
     // let all = this.props.chirpsList;
 

@@ -12,9 +12,8 @@ export const ViewController = React.createClass({
 
   getInitialState: function(){
     ACTIONS.changeNav(this.props.route, window.location.hash)
-    // let storeObject = STORE.getStoreData();
-    // return storeObject;
-    return STORE.getStoreData();
+    let storeObject = STORE.getStoreData();
+    return storeObject;
   },
 
   componentDidMount: function(){
@@ -22,7 +21,8 @@ export const ViewController = React.createClass({
 		STORE.onStoreChange(function(){
 			let newStoreObj = STORE.getStoreData();
 			comp.setState(newStoreObj);
-		})
+		});
+    ACTIONS.getAllChirps();
 	},
 
   render: function(){
