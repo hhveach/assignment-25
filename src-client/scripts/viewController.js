@@ -22,6 +22,7 @@ export const ViewController = React.createClass({
 			let newStoreObj = STORE.getStoreData();
 			comp.setState(newStoreObj);
 		});
+    ACTIONS.getUser();
     ACTIONS.getAllChirps();
 	},
 

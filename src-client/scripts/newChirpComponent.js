@@ -7,6 +7,11 @@ import {ACTIONS} from './actions.js';
 
 export const NewChirpForm = React.createClass({
 
+  // getInitialState(){
+  //   let usr = ACTIONS.getUser();
+  //   return usr;
+  // },
+
   _handleSubmit: function(evt){
     evt.preventDefault();
     let current = evt.target;
@@ -16,7 +21,10 @@ export const NewChirpForm = React.createClass({
     let newChirpInput = {
       msg: current.chirpMsg.value,
       imgLink: current.chirpImg.value,
+      userInfo: this.props.currentUser.username,
+      userImg: this.props.currentUser.avatarUrl
     }
+
     ACTIONS.saveChirp(newChirpInput);
 
   },
